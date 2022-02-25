@@ -1,6 +1,8 @@
 package ru.digitalleague;
 
 import ru.digitalleague.messenger.*;
+import ru.digitalleague.messenger.multiple.MessengerV2;
+import ru.digitalleague.messenger.multiple.MultipleMessengerImpl;
 
 import java.util.*;
 import java.util.function.*;
@@ -9,7 +11,9 @@ public class ExampleInterfaces {
 
     public static void main(String[] args) {
 //        exampleMessenger();
-        exampleCollectionsAndFunctionalInterfaces();
+        exampleMultipleImplementationMethod();
+//        exampleCollectionsAndFunctionalInterfaces();
+        // TODO рассмотреть основные интерфейсы в Java standard library
     }
 
     private static void exampleMessenger() {
@@ -38,6 +42,17 @@ public class ExampleInterfaces {
 //            System.out.println(encryptedMessenger.getMessage());
             System.out.println(fileSender.getFile());
         }
+    }
+
+    private static void exampleMultipleImplementationMethod() {
+        MultipleMessengerImpl multipleMessengerImpl = new MultipleMessengerImpl();
+        Messenger messenger = multipleMessengerImpl;
+        MessengerV2 messengerV2 = multipleMessengerImpl;
+
+        messenger.sendMessage("Test message from Messenger");
+        messengerV2.sendMessage("Test message from MessengerV2");
+        System.out.println(messenger.getMessage());
+        System.out.println(messengerV2.getMessage());
     }
 
     private static void exampleCollectionsAndFunctionalInterfaces() {
