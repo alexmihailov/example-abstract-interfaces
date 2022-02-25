@@ -8,6 +8,7 @@ public interface EncryptedMessenger extends Messenger {
 
     String getEncryptedMessage();
 
+    // Пример определения статического метода в интерфейсе
     static String encryptMessage(String message) {
         return Base64.getEncoder().encodeToString(message.getBytes());
     }

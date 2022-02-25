@@ -20,11 +20,13 @@ public final class AnimalFactory {
             case DOG:
                 result = new Dog(name);
                 break;
+// Пример, когда для утку добавили в enum, но switch не изменили.
 //            case DUCK:
 //                result = new Duck(name);
 //                break;
             default:
                 throw new UnknownAnimalException(type);
+// Пример с созданием анонимного объекта на основе абстрактного класса (нужно раскоментить строку ru/digitalleague/ExampleAbstract.java:17)
 //            default:
 //                result = new Animal(name) {
 //                    @Override

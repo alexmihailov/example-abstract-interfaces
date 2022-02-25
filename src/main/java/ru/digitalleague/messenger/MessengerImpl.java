@@ -22,4 +22,10 @@ public class MessengerImpl implements Messenger {
             return message;
         }
     }
+
+// Пример переопределения дефолтного метода в классе реализации
+//    @Override
+//    public String messageWithClass(String message) {
+//        return Messenger.super.messageWithClass(message);
+//    }
 }

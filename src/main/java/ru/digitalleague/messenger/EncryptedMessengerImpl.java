@@ -3,6 +3,8 @@ package ru.digitalleague.messenger;
 import java.util.ArrayList;
 import java.util.List;
 
+// Один класс может наследовать несколько интерфейсов.
+// Аналогично и интерфейс может наследовать от нескольких родителей (по сути множественное наследование, показать пример)!!!!
 public class EncryptedMessengerImpl extends MessengerImpl implements EncryptedMessenger, TextFileSender {
 
     private final List<String> decryptedMessages = new ArrayList<>();
@@ -10,6 +12,7 @@ public class EncryptedMessengerImpl extends MessengerImpl implements EncryptedMe
 
     @Override
     public void sendEncryptedMessage(String message) {
+// Пример с попыткой вызова статического метода в реализации (показать что нужно явно указать имя интерфейса)
 //        decryptedMessages.add(encryptMessage(messageWithClass(message)));
         decryptedMessages.add(EncryptedMessenger.encryptMessage(messageWithClass(message)));
     }
