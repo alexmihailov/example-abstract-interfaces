@@ -14,6 +14,7 @@ public class ExampleAbstract {
             try {
                 Animal animal = getAnimal(type, "Name" + i);
                 System.out.println(animal.printSound());
+//                System.out.println(animal.getClass().getName());
             } catch (AnimalFactory.UnknownAnimalException e) {
                 System.out.println("Can't create animal. " + e.getMessage());
             }
